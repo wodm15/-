@@ -8,20 +8,20 @@ const options = {
   }
 };
 
-//const movieContainer = document.getElementById('movieContainer'); //영화 리스트 보여줄데이터 창고
 
 
 function fetchTMDBData() {
   fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
   .then (response => response.json())
   .then( data => { 
-    // const movieContainer = data.results;
+ 
     const movietable = document.getElementById('movietable');
     data.results.forEach(movie => {
         const movieContainer = document.createElement('div');
-
         movieContainer.classList.add('movieContainer-style');
+        movieContainer.dataset.id = movie.id;
         const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+
         movieContainer.innerHTML=`
         <h2> ${movie.title} </h2>
         <img src = "${imageUrl}" class="img-style" alt = '이미지 없음'>
@@ -29,15 +29,36 @@ function fetchTMDBData() {
         <h1 class='overview-style'> ${movie.overview}</h1>
         
         `;
+        
+        const images = movieContainer.querySelectorAll('.img-style');
+        images.forEach(image => {
+        image.addEventListener('click', (event) => { 
+        const movieId = event.target.closest('.movieContainer-style').dataset.id;
+        alert(`영화 ID: ${movieId}`);
+    });  ////event.target은 이벤트가 발생한 요소
+});     //closest은 주어진 선택자와 일치하는 가장 가까운 조상 요소
 
         movietable.appendChild(movieContainer);
         
     })
+
+    
   
-    console.log(movieContainer)
+    
   })
   .catch(error => console.log(error));
 }
 
 fetchTMDBData();
+
+const searchInput = document.getElementById('searchInput');
+
 //document.getElementById('fetchButton').addEventListener('click', fetchTMDBData);
+
+// const images = movieContainer.querySelectorAll('.img-style');
+// images.forEach(image => {
+//  const movieId = image.dataset.id;
+//  image.addEventListener('click', () => {
+//      alert(`영화 ID: ${movieId}`);
+//  });
+// });
