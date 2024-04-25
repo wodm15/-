@@ -5,14 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>영화검색사이트</title>
 </head>
+<style>
+  .movieContainer-style{
+    border: 1px solid black;
+    float:left;
+    padding: 30px;
+    width: 25%;
+    height: 500px;
+    overflow : hidden
+  }
+  .overview-style {
+    font-size: 15px;
+  }
+
+  .img-style {
+    width: 150px;
+  }
+</style>
 <body>
   <div class="search-container">
     <input id="searchInput" type="text" placeholder="영화 검색...">
     <button id="searchButton">검색</button>
 </div>
-<div class="movie-list" id="movieList">
+<div class = movietable id="movietable">
 </div>
-  <button id="fetchButton">전체 패치버튼</button>
   <!-- JavaScript 파일을 포함 -->
   <script src="script.js"></script>
 </body>

@@ -8,49 +8,36 @@ const options = {
   }
 };
 
-
+//const movieContainer = document.getElementById('movieContainer'); //영화 리스트 보여줄데이터 창고
 
 
 function fetchTMDBData() {
   fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
-  .then(response => response.json())
-  .then(data => {
-    // 받은 데이터에서 이미지 URL과 제목을 추출하여 출력
-    const movieList = data.results.map(movie => {
-      return {
-        title: movie.title,
-        imageUrl: `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-      };
-    });
-    // movieList를 이용하여 HTML에 출력
-    const movieListContainer = document.getElementById('movieList');
-    movieListContainer.innerHTML = ''; // 기존에 있던 내용을 지웁니다.
+  .then (response => response.json())
+  .then( data => { 
+    // const movieContainer = data.results;
+    const movietable = document.getElementById('movietable');
+    data.results.forEach(movie => {
+        const movieContainer = document.createElement('div');
 
-    movieList.forEach(movie => {
-      const movieElement = document.createElement('div');
-      movieElement.innerHTML = `
-        <h2>${movie.title}</h2>
-        <img src="${movie.imageUrl}" alt="${movie.title}" width="200">
-      `;
-      movieListContainer.appendChild(movieElement);
-    });
+        movieContainer.classList.add('movieContainer-style');
+        const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+        movieContainer.innerHTML=`
+        <h2> ${movie.title} </h2>
+        <img src = "${imageUrl}" class="img-style" alt = '이미지 없음'>
+        <h1> 영화 평점: ${movie.vote_average}</h1>
+        <h1 class='overview-style'> ${movie.overview}</h1>
+        
+        `;
+
+        movietable.appendChild(movieContainer);
+        
+    })
+  
+    console.log(movieContainer)
   })
-
-  .catch(error => console.error(error));
+  .catch(error => console.log(error));
 }
 
-//DOM 요소 만들기
-// const movieCard = function(movie){
-//   const 
-// }
-
-const searchInput = document.getElementById('searchInput');
-const serarchButton = document.getElementById('searchButton');
-const movieList = document.getElementById('movieList');
-
-
-
-
-// HTML 버튼과 JavaScript 함수 연결
-document.getElementById('fetchButton').addEventListener('click', fetchTMDBData);
-
+fetchTMDBData();
+//document.getElementById('fetchButton').addEventListener('click', fetchTMDBData);
