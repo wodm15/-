@@ -6,9 +6,13 @@
   <title>영화검색사이트</title>
 </head>
 <body>
-  <h1>TMDB API 테스트</h1>
-  <button id="fetchButton">API 데이터 가져오기</button>
-  
+  <div class="search-container">
+    <input id="searchInput" type="text" placeholder="영화 검색...">
+    <button id="searchButton">검색</button>
+</div>
+<div class="movie-list" id="movieList">
+</div>
+  <button id="fetchButton">전체 패치버튼</button>
   <!-- JavaScript 파일을 포함 -->
   <script src="script.js"></script>
 </body>
