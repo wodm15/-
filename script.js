@@ -19,6 +19,7 @@ function fetchTMDBData() {
     data.results.forEach(movie => {
         const movieContainer = document.createElement('div');
         movieContainer.classList.add('movieContainer-style');
+        movieContainer.classList.add('moviebackground');
         movieContainer.dataset.id = movie.id; //이거 안넣어서 계속 오류남 아오
         const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
@@ -79,6 +80,8 @@ searchInput.addEventListener('input', function() {
       document.getElementById('badage').textContent= 'light 🔄'
       document.getElementById('body').classList.add('dark');
       document.getElementById('body').classList.remove('normal');
+       
+      
     } else {
       document.getElementById('badage').textContent= 'black 🔄'
       document.getElementById('body').classList.add('normal');

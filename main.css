@@ -1,0 +1,53 @@
+.movieContainer-style{
+    border-radius: 100px;
+    box-shadow: 10px;
+    display: relative;
+    float:left;
+    padding: 50px;
+    width: 20vw;
+    height: 600px;
+    overflow : hidden;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 50px;
+  }
+
+  .moviebackground{
+    background-color: lightslategray;
+  }
+
+  .overview-style {
+    font-size: 15px;
+  }
+
+  .img-style {
+    width: 150px;
+  }
+
+  .search-container {
+    margin-left: 30%;
+
+    font-size: 30px;
+  }
+
+  .badge {
+    margin-right: 50px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .dark{
+  background-color: black;
+  color:white;
+}
+  .normal{
+    background-color: lightcoral;
+    color: black;
+  }
+
+.front-img{
+    width: 25%; 
+    height: 200px; 
+    float: left;
+}
