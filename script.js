@@ -71,13 +71,28 @@ searchInput.addEventListener('input', function() {
     });
 });
 
-
-//document.getElementById('fetchButton').addEventListener('click', fetchTMDBData);
-
-// const images = movieContainer.querySelectorAll('.img-style');
-// images.forEach(image => {
-//  const movieId = image.dataset.id;
-//  image.addEventListener('click', () => {
-//      alert(`영화 ID: ${movieId}`);
-//  });
-// });
+ //dark mode 구현 , 기본 style은 .normal, 다크모드는 .dark
+ var dark_cnt=0;
+   document.getElementById('badage').addEventListener('click', function(){
+    dark_cnt++;
+    if (dark_cnt % 2 == 1){
+      document.getElementById('badage').textContent= 'light 🔄'
+      document.getElementById('body').classList.add('dark');
+      document.getElementById('body').classList.remove('normal');
+    } else {
+      document.getElementById('badage').textContent= 'black 🔄'
+      document.getElementById('body').classList.add('normal');
+      document.getElementById('body').classList.remove('dark');
+    }
+  });
+    
+  //   $('.badge').on('click', function(){
+  //     dark_cnt++;
+  //     if(dark_cnt%2==1){
+  //     $('.badge').html('Light 🔄');
+  //     $('#body').addClass('dark');
+  //   } else{
+  //     $('.badge').html('dark 🔄');
+  //     $('#body').removeClass('dark');
+  //   }
+  // });

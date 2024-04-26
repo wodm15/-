@@ -9,7 +9,7 @@
   .movieContainer-style{
     border: 1px solid black;
     float:left;
-    padding: 30px;
+    padding: 50px;
     width: 25%;
     height: 500px;
     overflow : hidden
@@ -21,12 +21,48 @@
   .img-style {
     width: 150px;
   }
+
+  .search-container {
+    text-align: center;
+  }
+
+  .badge {
+    margin-right: 50px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .dark{
+background-color: black;
+color:white;
+}
+  .normal{
+    background-color: lightgrey;
+    color: black;
+  }
+
 </style>
-<body>
-  <div class="search-container">
-    <input id="searchInput" type="text" placeholder="영화 검색...">
+
+<body id = 'body' class="normal">
+  <br><br><br>
+<div class="search-container">
+    <span style="font-size: 30px;">영화 제목: &nbsp </span>
+    <input id="searchInput" type="text" placeholder="영화 제목">
     <button id="searchButton">검색</button>
 </div>
+
+<br><br>
+
+<div style="float:right">
+
+  <span class="badge bg-dark" id="badage">Dark 🔄</span>
+
+</div>
+<span style="clear:both"></span>
+
+<br><br><br><br>
+
 <div class = movietable id="movietable">
 </div>
   <!-- JavaScript 파일을 포함 -->
