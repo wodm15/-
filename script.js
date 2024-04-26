@@ -80,12 +80,15 @@ searchInput.addEventListener('input', function() {
       document.getElementById('badage').textContent= 'light 🔄'
       document.getElementById('body').classList.add('dark');
       document.getElementById('body').classList.remove('normal');
-       
+      document.getElementById('badage').classList.add('b-w');
+      document.getElementById('search-container').classList.add('bottom-line2');
       
     } else {
-      document.getElementById('badage').textContent= 'black 🔄'
+      document.getElementById('badage').textContent= 'dark 🔄'
       document.getElementById('body').classList.add('normal');
       document.getElementById('body').classList.remove('dark');
+      document.getElementById('badage').classList.remove('b-w');
+      document.getElementById('search-container').classList.remove('bottom-line2');
     }
   });
     

@@ -25,24 +25,40 @@
   }
 
   .search-container {
-    margin-left: 30%;
-
+    text-align: center; 
+    justify-content: center;
+    padding: 50px;
     font-size: 30px;
+    
+    display: flex;
+    align-items: center;
+  }
+  .bottom-line1 {
+    border-bottom: 1px solid black;
+  }
+  .bottom-line2 {
+    border-bottom: 1px solid white;
   }
 
+  
   .badge {
     margin-right: 50px;
-    border: 1px solid black;
     padding: 10px;
+    border: 1px solid black;
     border-radius: 20px;
     cursor: pointer;
   }
+
+  .b-w{
+    border: 1px solid white;
+  }
+
   .dark{
   background-color: black;
   color:white;
 }
   .normal{
-    background-color: lightcoral;
+    background-color: lightgrey;
     color: black;
   }
 
