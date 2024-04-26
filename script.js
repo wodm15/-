@@ -9,7 +9,6 @@ const options = {
 };
 
 
-
 function fetchTMDBData() {
   fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
   .then (response => response.json())
@@ -24,8 +23,8 @@ function fetchTMDBData() {
         const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
         movieContainer.innerHTML=`
-        <h2 class = 'movie-title'> ${movie.title} </h2>
-        <img src = "${imageUrl}" class="img-style" alt = '이미지 없음'>
+        <h2 class="movie-title"><a href="https://www.google.com/search?q=${encodeURI(movie.title)}" target="_blank" class='link';>${movie.title}</a></h2>
+        <img src = "${imageUrl}" class="img-style" alt = '이미지 없음' style='cursor:pointer';>
         <h1> 영화 평점: ${movie.vote_average}</h1>
         <h1 class='overview-style'> ${movie.overview}</h1>
         
@@ -92,13 +91,3 @@ searchInput.addEventListener('input', function() {
     }
   });
     
-  //   $('.badge').on('click', function(){
-  //     dark_cnt++;
-  //     if(dark_cnt%2==1){
-  //     $('.badge').html('Light 🔄');
-  //     $('#body').addClass('dark');
-  //   } else{
-  //     $('.badge').html('dark 🔄');
-  //     $('#body').removeClass('dark');
-  //   }
-  // });

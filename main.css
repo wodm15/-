@@ -10,6 +10,7 @@
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 50px;
+
   }
 
   .moviebackground{
@@ -66,4 +67,9 @@
     width: 25%; 
     height: 200px; 
     float: left;
+}
+
+.link{
+  text-decoration-line: none;
+  color: inherit;
 }
