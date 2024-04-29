@@ -10,7 +10,7 @@
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 50px;
-
+    overflow-y: scroll;
   }
 
   .moviebackground{
@@ -72,4 +72,18 @@
 .link{
   text-decoration-line: none;
   color: inherit;
+}
+
+/* 페이지 스크롤 스타일 */
+.scroll_cotainer{
+  position: fixed;
+  top: 10px;
+  height: 50px;
+  width: 105%;
+}
+
+.progress_bar{
+  width: 0%;
+  height: 5px;
+  background-color: lightskyblue;
 }

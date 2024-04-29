@@ -91,3 +91,16 @@ searchInput.addEventListener('input', function() {
     }
   });
     
+// 스크롤바 스크립트
+
+var content = document.getElementById('content');
+var progress_bar = document.getElementById('progress_bar');
+
+window.addEventListener('scroll', function(){
+  var height = content.scrollHeight;   //실제 높이
+  var scrollTop = this.window.scrollY;    //스크롤한 양
+  var clientHeight = content.clientHeight;  // 스크롤 요소 높이
+  console.log(height, scrollTop,clientHeight);
+  var progress = (scrollTop / (height - clientHeight)) * 100; 
+  progress_bar.style.width = progress + '%';
+});
