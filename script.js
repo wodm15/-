@@ -19,7 +19,7 @@ function fetchTMDBData() {
         const movieContainer = document.createElement('div');
         movieContainer.classList.add('movieContainer-style');
         movieContainer.classList.add('moviebackground');
-        movieContainer.dataset.id = movie.id; //이거 안넣어서 계속 오류남 아오
+        movieContainer.dataset.id = movie.id; //dataset movie id 넣기
         const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
         movieContainer.innerHTML=`
